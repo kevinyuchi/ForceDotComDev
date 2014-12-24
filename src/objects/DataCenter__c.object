@@ -62,6 +62,7 @@
     </fields>
     <fields>
         <fullName>Server_Number__c</fullName>
+        <defaultValue>0</defaultValue>
         <externalId>false</externalId>
         <label>Server Number</label>
         <precision>18</precision>

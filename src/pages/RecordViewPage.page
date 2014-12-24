@@ -1,4 +1,4 @@
-<apex:page title="Data Center Detail" controller="RecordCtrl" id="RecordViewPage">
+<apex:page title="Data Center Detail" controller="RecordCtrl" id="RecordViewPage" wizard="true">
 	<apex:pagemessages />
 		<apex:form >
 		<apex:pageBlock title="Date Center Detail">

@@ -2,12 +2,22 @@
 	<apex:sectionHeader title="Date Center Records"/>
 	<apex:pagemessages />
 		<apex:form >
-		<apex:pageBlock title="Date Center Detail">
-			<apex:pageblocktable value="{!dataCenters}" var="dataCenter" columnsWidth="200px,200px" width="50%" columns="20" rows="20" summary="Location info and Server Nunmber info" title="info Table">
+		<apex:pageBlock title="Hellow {!$User.FirstName} !">
+		You are viewing DataCenter Data.
+		</apex:pageBlock>
+		<apex:pageBlock title="Date Center Detail" id="dataTable">
+			<apex:pageblocktable value="{!dataCenters}" var="dataCenter"  width="50%" columns="20" rows="20" summary="Location info and Server Nunmber info">
+				<apex:facet name="caption"><h1>Record Info</h1></apex:facet>
+				<apex:facet name="header" ><p> Current Time : {!now()}</p></apex:facet>
+				<apex:facet name="footer">
+					Page Footer
+				</apex:facet>
 				<apex:column value="{!dataCenter.name}"/>
 				<apex:column value="{!dataCenter.Location__c}"/>
 				<apex:column value="{!dataCenter.Server_Number__c}"/>	
 			</apex:pageblocktable>
-		</apex:pageBlock>	
+			<apex:outputtext value="You have be on this page for {!Second} seconds." id="testSecond"/>
+		</apex:pageBlock>
+			<apex:actionPoller action="{!pollerCall}" reRender="Datatable" interval="7"/>
 		</apex:form>    
 </apex:page>

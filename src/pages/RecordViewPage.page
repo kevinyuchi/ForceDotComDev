@@ -1,6 +1,12 @@
-<apex:page >
-<!-- Begin Default Content REMOVE THIS -->
-<h1>Congratulations</h1>
-This is your new Page
-<!-- End Default Content REMOVE THIS -->
+<apex:page title="Data Center Detail" controller="RecordCtrl" id="RecordViewPage">
+	<apex:pagemessages />
+		<apex:form >
+		<apex:pageBlock title="Date Center Detail">
+			<apex:pageblocktable value="{!dataCenters}" var="dataCenter">
+				<apex:column value="{!dataCenter.name}"/>
+				<apex:column value="{!dataCenter.Location__c}"/>
+				<apex:column value="{!dataCenter.Server_Number__c}"/>	
+			</apex:pageblocktable>
+		</apex:pageBlock>	
+		</apex:form>    
 </apex:page>

@@ -21,16 +21,16 @@ public with sharing class RecordCtrl {
 		}
 		
 		public pageReference toTargetDataCenter(){
-			//id targetId = id.valueOf(TargetDataCenterID);
-			DataCenter__c dataCenter = new DataCenter__c(id=TargetDataCenterID);
+
+/*			DataCenter__c dataCenter = new DataCenter__c(id=TargetDataCenterID);
 			PageReference actionPage = new ApexPages.StandardController(dataCenter).view();
         	actionPage.setRedirect(true);
-        	return actionPage;
+        	return actionPage;*/
 			
-			/*PageReference pg = new PageReference('/apex/RecordViewPage');
+			PageReference pg = new PageReference('/apex/NewRecordPage');
 			pg.getParameters().put('id',TargetDataCenterID);
 			pg.setRedirect(true);
-			return pg;*/
+			return pg;
 		}
 		
 }

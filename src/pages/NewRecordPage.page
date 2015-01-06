@@ -1,4 +1,4 @@
-<apex:page standardController="DataCenter__c"  id="recordView">
+<apex:page standardController="DataCenter__c"  extensions="TargerServersRecordCtrl">
 	<apex:SectionHeader title="Data Center Record"/>
 	<apex:pagemessages />
 	<apex:form >
@@ -7,9 +7,21 @@
 				<apex:commandButton action="{!save}" value="Save"/>
 			</apex:pageBlockButtons>
 			<apex:pageBlockSection title="Target Date Center Section" columns="2">
-				<apex:inputField value="{!DataCenter__c.name}"/>
+				<apex:outputField value="{!DataCenter__c.name}"/>
 				<apex:outputField value="{!DataCenter__c.id}"/>
+				<apex:outputField value="{!DataCenter__c.Server_Number__c}"/>
+				<apex:outputField value="{!DataCenter__c.Maintenance_Team_Size__c}"/>
+				<apex:outputField value="{!DataCenter__c.Location__c}"/>
 			</apex:pageBlockSection>	
-		</apex:pageBlock>
+		</apex:pageBlock>		
+		<apex:pageBlock title="Target Data Center Servers List" mode="view">		
+				<apex:pageBlockTable value="{!Servers}"  var="server">
+						<apex:column value="{!server.name}"/>
+						<apex:column value="{!server.Server_ID__c}"/>
+						<apex:column value="{!server.Power_Down__c}"/> 
+						<apex:column value="{!server.Power_LeveL__c}"/> 
+				</apex:pageBlockTable>
+		</apex:pageBlock>		 
 	</apex:form>
+	{!servers}---{!serverMapRecords.name} 
 </apex:page>

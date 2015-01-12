@@ -1,7 +1,7 @@
-<apex:page standardController="DataCenter__c"  extensions="TargerServersRecordCtrl">
+<apex:page standardController="DataCenter__c"  extensions="TargetServersRecordCtrl">
 	<apex:SectionHeader title="Data Center Record"/>
 	<apex:pagemessages />
-	<apex:form >
+	<apex:form > 
 		<apex:pageBlock title="Target Data Center" mode="edit">
 			<apex:pageBlockButtons >
 				<apex:commandButton action="{!save}" value="Save"/>
@@ -22,6 +22,6 @@
 						<apex:column value="{!server.Power_LeveL__c}"/> 
 				</apex:pageBlockTable>
 		</apex:pageBlock>		 
-	</apex:form>
-	{!servers}---{!serverMapRecords.name} 
+	</apex:form> 
+	{!servers}---{!serverMapRecords} 
 </apex:page>
